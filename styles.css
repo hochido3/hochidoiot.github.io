@@ -1,43 +1,68 @@
-/* Định nghĩa kiểu dáng cho trái tim */
-.heart {
-    width: 100px;
-    height: 100px;
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3498db; /* Màu nền của toàn bộ trang */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Căn giữa theo chiều dọc */
+    align-items: center; /* Căn giữa theo chiều ngang */
+    height: 100vh; /* Chiều cao 100% của viewport */
+}
+
+h1 {
+    color: #fff; /* Màu chữ của tiêu đề */
+    text-align: center; /* Canh giữa tiêu đề */
+    margin-top: 20px; /* Khoảng cách phía trên tiêu đề */
+    font-size: 2em; /* Kích thước chữ */
+}
+
+.big-heart {
     position: relative;
-    background-color: red;
-    margin: 100px auto;
-    transform: rotate(-45deg);
-    animation: beat 1s infinite;
+    width: 200px; /* Chiều rộng của trái tim lớn */
+    height: 200px; /* Chiều cao của trái tim lớn */
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các trái tim nhỏ xếp chồng lên nhau */
+    justify-content: center; /* Căn giữa các trái tim nhỏ */
+    align-items: center; /* Căn giữa theo chiều dọc */
 }
 
-.heart::before,
-.heart::after {
-    content: "";
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    border-radius: 50%;
-    position: absolute;
+.small-heart {
+    width: 40px; /* Chiều rộng của trái tim nhỏ */
+    height: 40px; /* Chiều cao của trái tim nhỏ */
+    background-color: red; /* Màu nền của trái tim nhỏ */
+    position: relative; /* Để có thể sử dụng absolute cho pseudo-elements */
+    transform: rotate(-45deg); /* Xoay trái tim nhỏ */
+    margin: 2px; /* Khoảng cách giữa các trái tim nhỏ */
+    animation: heartbeat 1.2s infinite; /* Thêm hiệu ứng nhấp nháy */
 }
 
-.heart::before {
-    top: -50px;
-    left: 0;
+.small-heart:before,
+.small-heart:after {
+    content: '';
+    width: 40px; /* Chiều rộng của nửa trái tim nhỏ */
+    height: 40px; /* Chiều cao của nửa trái tim nhỏ */
+    background-color: red; /* Màu nền của nửa trái tim nhỏ */
+    border-radius: 50%; /* Làm cho nửa trái tim tròn */
+    position: absolute; /* Đặt vị trí tuyệt đối */
 }
 
-.heart::after {
-    left: 50px;
-    top: 0;
+.small-heart:before {
+    top: -20px; /* Đặt nửa trái tim bên trên */
+    left: 0; /* Căn trái */
 }
 
-/* Hiệu ứng nhịp đập */
-@keyframes beat {
-    0% {
-        transform: scale(1) rotate(-45deg);
-    }
-    25% {
-        transform: scale(1.1) rotate(-45deg);
+.small-heart:after {
+    left: 20px; /* Đặt nửa trái tim bên phải */
+    top: 0; /* Căn trên */
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1); /* Không thay đổi kích thước */
     }
     50% {
-        transform: scale(1) rotate(-45deg);
+        transform: scale(1.1); /* Phóng to trái tim */
     }
 }
