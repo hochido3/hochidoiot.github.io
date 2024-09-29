@@ -1,31 +1,31 @@
 /* styles.css */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* Màu nền của toàn bộ trang */
     margin: 0;
     padding: 0;
 }
 
 h1 {
-    color: #333;
-    text-align: center;
+    color: #333; /* Màu chữ của tiêu đề */
+    text-align: center; /* Canh giữa tiêu đề */
     margin-top: 50px;
 }
 
 p {
-    color: #666;
+    color: #666; /* Màu chữ của đoạn văn */
     text-align: center;
 }
 
 ul {
-    list-style-type: none;
+    list-style-type: none; /* Xóa các dấu đầu dòng */
     padding: 0;
 }
 
 ul li {
     padding: 10px;
-    background-color: #fff;
+    background-color: #fff; /* Màu nền cho mỗi mục trong danh sách */
     margin: 10px auto;
-    width: 50%;
-    border: 1px solid #ddd;
+    width: 50%; /* Chiều rộng của các mục danh sách */
+    border: 1px solid #ddd; /* Viền mỏng cho mỗi mục */
 }
