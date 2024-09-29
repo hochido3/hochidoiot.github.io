@@ -1,53 +1,35 @@
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #3498db; /* Màu nền của toàn bộ trang */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Căn giữa theo chiều dọc */
-    align-items: center; /* Căn giữa theo chiều ngang */
-    height: 100vh; /* Chiều cao 100% của viewport */
-}
-
-h1 {
-    color: #fff; /* Màu chữ của tiêu đề */
-    text-align: center; /* Canh giữa tiêu đề */
-    margin-top: 15px; /* Khoảng cách phía trên tiêu đề */
-    font-size: 2em; /* Kích thước chữ */
-}
-
+/* Định nghĩa kiểu dáng cho trái tim */
 .heart {
-    width: 100px; /* Chiều rộng của trái tim */
-    height: 100px; /* Chiều cao của trái tim */
-    background-color: red; /* Màu nền của trái tim */
-    position: relative; /* Để có thể sử dụng absolute cho pseudo-elements */
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
     margin: 100px auto;
-    transform: rotate(-45deg); /* Xoay trái tim */
-    animation: beat 1s infinite; /* Thêm hiệu ứng đập cho trái tim */
+    transform: rotate(-45deg);
+    animation: beat 1s infinite;
 }
 
-.heart:before,
-.heart:after {
-    content: '';
-    width: 100px; /* Chiều rộng của nửa trái tim */
-    height: 100px; /* Chiều cao của nửa trái tim */
-    background-color: red; /* Màu nền của nửa trái tim */
-    border-radius: 50%; /* Làm cho nửa trái tim tròn */
-    position: absolute; /* Đặt vị trí tuyệt đối */
+.heart::before,
+.heart::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
 }
 
-.heart:before {
-    top: -50px; /* Đặt nửa trái tim bên trên */
-    left: 0; /* Căn trái */
+.heart::before {
+    top: -50px;
+    left: 0;
 }
 
-.heart:after {
-    left: 50px; /* Đặt nửa trái tim bên phải */
-    top: 0; /* Căn trên */
+.heart::after {
+    left: 50px;
+    top: 0;
 }
 
+/* Hiệu ứng nhịp đập */
 @keyframes beat {
     0% {
         transform: scale(1) rotate(-45deg);
